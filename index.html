@@ -14,8 +14,11 @@
     <!-- Page plugins -->
     <link type="text/css" href="./assets/vendor/highlight/css/highlight.min.css" rel="stylesheet">
     <link type="text/css" href="./assets/vendor/highlight/css/styles/atom-one-dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <!-- Theme CSS -->
     <link type="text/css" href="./assets/css/theme.css" rel="stylesheet">
+    <link type="text/css" href="./assets/css/portfolio.css" rel="stylesheet">
 </head>
 
 <body>
@@ -23,7 +26,8 @@
     <nav class="navbar navbar-expand-lg navbar-transparent navbar-dark bg-dark py-3" id="navbar_main">
         <div class="container">
             <a class="navbar-brand mr-lg-5" href="./index.html"><strong>Purpose</strong> UI Kit</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_main_collapse" aria-controls="navbar_main" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_main_collapse"
+                    aria-controls="navbar_main" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar_main_collapse">
@@ -32,12 +36,14 @@
                         <a class="nav-link" href="./index.html">Overview</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">Pages</a>
                         <div class="dropdown-menu dropdown-menu-lg py-0">
                             <div class="list-group list-group-flush">
                                 <a href="./pages/pages-landing.html" class="list-group-item list-group-item-action">
                                     <div class="media d-flex align-items-center">
-                                        <img src="./assets/img/icons/dusk/svg/browser-window.svg" class="img-saturate" style="width: 60px;">
+                                        <img src="./assets/img/icons/dusk/svg/browser-window.svg" class="img-saturate"
+                                             style="width: 60px;">
                                         <div class="media-body ml-3">
                                             <h2 class="heading h6 mb-1">Landing Pages</h2>
                                             <p class="mb-0">A great point to start from.</p>
@@ -46,7 +52,8 @@
                                 </a>
                                 <a href="./pages/pages-secondary.html" class="list-group-item list-group-item-action">
                                     <div class="media d-flex align-items-center">
-                                        <img src="./assets/img/icons/dusk/svg/details-popup.svg" class="img-saturate" style="width: 60px;">
+                                        <img src="./assets/img/icons/dusk/svg/details-popup.svg" class="img-saturate"
+                                             style="width: 60px;">
                                         <div class="media-body ml-3">
                                             <h2 class="heading h6 mb-1">Secondary Pages</h2>
                                             <p class="mb-0">Build your website with these demos.</p>
@@ -55,7 +62,8 @@
                                 </a>
                                 <a href="./pages/pages-account.html" class="list-group-item list-group-item-action">
                                     <div class="media d-flex align-items-center">
-                                        <img src="./assets/img/icons/dusk/svg/form.svg" class="img-saturate" style="width: 60px;">
+                                        <img src="./assets/img/icons/dusk/svg/form.svg" class="img-saturate"
+                                             style="width: 60px;">
                                         <div class="media-body ml-3">
                                             <h2 class="heading h6 mb-1">Account Pages</h2>
                                             <p class="mb-0">User account management made easy.</p>
@@ -77,8 +85,10 @@
                         <a class="nav-link" href="./docs/changelog.html" target="_blank">Changelog</a>
                     </li>
                     <li class="nav-item mr-0">
-                        <a href="https://themes.getbootstrap.com/product/purpose-website-ui-kit/" target="_blank" class="nav-link d-lg-none">Purchase now</a>
-                        <a href="https://themes.getbootstrap.com/product/purpose-website-ui-kit/" target="_blank" class="btn btn-sm btn-white btn-circle btn-icon d-none d-lg-inline-flex">
+                        <a href="https://themes.getbootstrap.com/product/purpose-website-ui-kit/" target="_blank"
+                           class="nav-link d-lg-none">Purchase now</a>
+                        <a href="https://themes.getbootstrap.com/product/purpose-website-ui-kit/" target="_blank"
+                           class="btn btn-sm btn-white btn-circle btn-icon d-none d-lg-inline-flex">
                             <span class="btn-inner--icon"><i class="fas fa-shopping-cart"></i></span>
                             <span class="btn-inner--text">Purchase now</span>
                         </a>
@@ -90,30 +100,46 @@
 </header>
 <main>
     <section class="slice" id="projects">
-       <div class="container" >
-            <div class="row"  style="font-family: Avenir;">
+        <div class="container">
+            <div class="row project">
                 <div class="col-md-5 offset-1 mb-5">
-                    <div class="card shadow">
-                        <div class="card-body py-4">
-                            <div class="d-inline-block align-items-start">
-                                <img class="card-img-top" style="margin: 0px 0px 10px 0px;" src="assets/img/projects/talky.png" alt="Card image cap" class="img-center">
-                                <h4 class="">Talky <small>| NWHacks 2018 </small> </h4>
-                                <p style="margin-bottom: 0;"> <i> A personalized public speaking coach that analyzes and gives feedback on speeches</i></p>
-                                <hr style="margin: 5px 0px 10px 0px;">
-                                <p class="card-text">Talky is an iOS application that records the audio of speeches and gives feedback based on 4 key criteria. A python script hosted on a flask server analyzes the audio for pausing, loudness, accuracy and speed and returns the results for the user to understand and improve on. I developed a fun and interactive chat-based UI for the user to communicate with Talky as well as a community feature for sharing of speeches and results.</p>
-                                <h6 style="margin: 10px 0px;"> <span style="background-color: gold; padding: 2px 5px; margin-right: 5px; border-radius: 5px;">WINNER</span>Top 10 Overall</h6>
-                                <h6 style="margin: 10px 0px;"> <span style="background-color: gold; padding: 2px 5px; margin-right: 5px; border-radius: 5px;">WINNER</span>Most Popular Vote</h6>
-                                <h6 style="margin: 10px 0px;"> <span style="background-color: gold; padding: 2px 5px; margin-right: 5px; border-radius: 5px;">WINNER</span>Best Microsoft Hack</h6>
-                                <div class="d-inline-flex align-items-start">
-                                    <button type="button" class="btn btn-primary btn-animated btn-animated-x" style="margin: 5px 10px 5px 0px;">
-                                        <span class="btn-inner--visible">Devpost</span>
-                                        <span class="btn-inner--hidden"><i class="fas fa-play"></i></span>
-                                    </button>
-                                    <button type="button" class="btn btn-primary btn-animated btn-animated-x" style="margin: 5px 10px 5px 0px;">
-                                        <span class="btn-inner--visible">Github</span>
-                                        <span class="btn-inner--hidden"><i class="fas fa-play"></i></span>
-                                    </button>
-                                </div>
+                    <div class="card-body py-4 card shadow">
+                        <div class="d-inline-block align-items-start">
+                            <div class="d-inline-flex align-items-start">
+                                <img class="project-icon"
+                                     src="assets/img/projects/talky.png" alt="Card image cap" class="img-center">
+                                <h4 style="margin-top: 10px;">Talky <br>
+                                    <small>NWHacks 2018</small>
+                                </h4>
+                            </div>
+                            <p class="no-bottom"><i> A personalized public speaking coach that analyzes and
+                                gives feedback on speeches</i></p>
+                            <hr>
+                            <p class="card-text">Talky is an iOS application that records the audio of speeches
+                                and gives feedback based on 4 key criteria. A python script hosted on a flask
+                                server analyzes the audio for pausing, loudness, accuracy and speed and returns
+                                the results for the user to understand and improve on. I developed a fun and
+                                interactive chat-based UI for the user to communicate with Talky as well as a
+                                community feature for sharing of speeches and results.</p>
+                            <h6><span class="award">WINNER</span> Top 10 Overall</h6>
+                            <h6><span class="award">WINNER</span> Most Popular Vote</h6>
+                            <h6><span class="award">WINNER</span> Best Microsoft Hack</h6>
+                            <div class="d-inline-flex align-items-start">
+                                <button type="button" class="btn btn-primary btn-animated btn-animated-x"
+                                        style="margin: 5px 10px 5px 0px;">
+                                    <span class="btn-inner--visible">Devpost</span>
+                                    <span class="btn-inner--hidden"><i class="fas fa-code"></i></span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-animated btn-animated-x"
+                                        style="margin: 5px 10px 5px 0px;">
+                                    <span class="btn-inner--visible">Github</span>
+                                    <span class="btn-inner--hidden"><i class="fab fa-github"></i></span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-animated btn-animated-x"
+                                        style="margin: 5px 10px 5px 0px;">
+                                    <span class="btn-inner--visible">App Store</span>
+                                    <span class="btn-inner--hidden"><i class="fab fa-apple"></i></span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -122,20 +148,33 @@
                     <div class="card shadow">
                         <div class="card-body py-4">
                             <div class="d-inline-block align-items-start">
-                                <img class="card-img-top" style="margin: 0px 0px 10px 0px;" src="assets/img/projects/talky.png" alt="Card image cap" class="img-center">
-                                <h4 class="">Talky <small>| NWHacks 2018 </small> </h4>
-                                <p style="margin-bottom: 0;"> <i> A personalized public speaking coach that analyzes and gives feedback on speeches</i></p>
+                                <img class="card-img-top" style="margin: 0px 0px 10px 0px; object-fit: contain;"
+                                     src="assets/img/projects/iris.jpg" alt="Card image cap" class="img-center">
+                                <h4 class="">Iris
+                                    <small>| Synopsys Science Fair 2018</small>
+                                </h4>
+                                <p style="margin-bottom: 0;"><i> An intuitive and functional Braille Learning Device for
+                                    the visually impaired</i></p>
                                 <hr style="margin: 5px 0px 10px 0px;">
-                                <p class="card-text">Talky is an iOS application that records the audio of speeches and gives feedback based on 4 key criteria. A python script hosted on a flask server analyzes the audio for pausing, loudness, accuracy and speed and returns the results for the user to understand and improve on. I developed a fun and interactive chat-based UI for the user to communicate with Talky as well as a community feature for sharing of speeches and results.</p>
-                                <h6 style="margin: 10px 0px;"> <span style="background-color: gold; padding: 2px 5px; margin-right: 5px; border-radius: 5px;">WINNER</span>Top 10 Overall</h6>
-                                <h6 style="margin: 10px 0px;"> <span style="background-color: gold; padding: 2px 5px; margin-right: 5px; border-radius: 5px;">WINNER</span>Most Popular Vote</h6>
-                                <h6 style="margin: 10px 0px;"> <span style="background-color: gold; padding: 2px 5px; margin-right: 5px; border-radius: 5px;">WINNER</span>Best Microsoft Hack</h6>
+                                <p class="card-text">Iris is a device that helps the visually impaired learn Braille
+                                    effectively and efficiently. Iris is composed of a cardboard frame with 2 3D-printed
+                                    octagons that rotate to form any character in the braille language. They are
+                                    controlled by rotational motors through an Arduino board. An accompanying iOS app,
+                                    designed with a minimalistic UI serves as the controller for the device learning
+                                    numbers and letters through Speech-to-text. A flask server hosted on Heroku
+                                    communicates between the app and device to convert spoken characters to degrees of
+                                    rotation on the device.</p>
+                                <h6 style="margin: 10px 0px;"><span
+                                        style="background-color: gold; padding: 2px 5px; margin-right: 5px; border-radius: 5px;">WINNER</span>2nd
+                                    Place Overall</h6>
                                 <div class="d-inline-flex align-items-start">
-                                    <button type="button" class="btn btn-primary btn-animated btn-animated-x" style="margin: 5px 10px 5px 0px;">
+                                    <button type="button" class="btn btn-primary btn-animated btn-animated-x"
+                                            style="margin: 5px 10px 5px 0px;">
                                         <span class="btn-inner--visible">Devpost</span>
                                         <span class="btn-inner--hidden"><i class="fas fa-play"></i></span>
                                     </button>
-                                    <button type="button" class="btn btn-primary btn-animated btn-animated-x" style="margin: 5px 10px 5px 0px;">
+                                    <button type="button" class="btn btn-primary btn-animated btn-animated-x"
+                                            style="margin: 5px 10px 5px 0px;">
                                         <span class="btn-inner--visible">Github</span>
                                         <span class="btn-inner--hidden"><i class="fas fa-play"></i></span>
                                     </button>
@@ -145,7 +184,7 @@
                     </div>
                 </div>
             </div>
-       </div>
+        </div>
 </main>
 <footer class="footer py-5  footer-dark">
     <div class="container">
@@ -228,7 +267,8 @@
                 <a href="./">
                     <img src="./assets/img/brand/icon.png" class="alpha-6 alpha-10--hover" style="width: 70px;">
                 </a>
-                <span class="d-block mt-4">&copy; 2018 <a href="https://webpixels.io/" class="footer-link" target="_blank">Webpixels</a>. All rights reserved.</span>
+                <span class="d-block mt-4">&copy; 2018 <a href="https://webpixels.io/" class="footer-link"
+                                                          target="_blank">Webpixels</a>. All rights reserved.</span>
             </div>
         </div>
     </div>
