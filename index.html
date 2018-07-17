@@ -101,87 +101,199 @@
 <main>
     <section class="slice" id="projects">
         <div class="container">
+            <div class="col-sm-10 offset-1">
+                <h1> Portfolio </h1>
+                <h3>
+                    <small> A collection of my latest projects and apps</small>
+                </h3>
+                <hr id="header-line">
+            </div>
+        </div>
+        <div class="container">
             <div class="row project">
-                <div class="col-md-5 offset-1 mb-5">
-                    <div class="card-body py-4 card shadow">
-                        <div class="d-inline-block align-items-start">
-                            <div class="d-inline-flex align-items-start">
-                                <img class="project-icon"
-                                     src="assets/img/projects/talky.png" alt="Card image cap" class="img-center">
-                                <h4 style="margin-top: 10px;">Talky <br>
-                                    <small>NWHacks 2018</small>
-                                </h4>
-                            </div>
-                            <p class="no-bottom"><i> A personalized public speaking coach that analyzes and
-                                gives feedback on speeches</i></p>
-                            <hr>
-                            <p class="card-text">Talky is an iOS application that records the audio of speeches
-                                and gives feedback based on 4 key criteria. A python script hosted on a flask
-                                server analyzes the audio for pausing, loudness, accuracy and speed and returns
-                                the results for the user to understand and improve on. I developed a fun and
-                                interactive chat-based UI for the user to communicate with Talky as well as a
-                                community feature for sharing of speeches and results.</p>
-                            <h6><span class="award">WINNER</span> Top 10 Overall</h6>
-                            <h6><span class="award">WINNER</span> Most Popular Vote</h6>
-                            <h6><span class="award">WINNER</span> Best Microsoft Hack</h6>
-                            <div class="d-inline-flex align-items-start">
-                                <button type="button" class="btn btn-primary btn-animated btn-animated-x"
-                                        style="margin: 5px 10px 5px 0px;">
-                                    <span class="btn-inner--visible">Devpost</span>
-                                    <span class="btn-inner--hidden"><i class="fas fa-code"></i></span>
-                                </button>
-                                <button type="button" class="btn btn-primary btn-animated btn-animated-x"
-                                        style="margin: 5px 10px 5px 0px;">
-                                    <span class="btn-inner--visible">Github</span>
-                                    <span class="btn-inner--hidden"><i class="fab fa-github"></i></span>
-                                </button>
-                                <button type="button" class="btn btn-primary btn-animated btn-animated-x"
-                                        style="margin: 5px 10px 5px 0px;">
-                                    <span class="btn-inner--visible">App Store</span>
-                                    <span class="btn-inner--hidden"><i class="fab fa-apple"></i></span>
-                                </button>
+                <div class="d-lg-inline-block">
+                    <!-- First two projects -->
+                    <div class="col-sm-10 offset-1 d-lg-flex">
+                        <div class="col-lg-6 mb-3">
+                            <div class="card-body py-4 card shadow">
+                                <div class="d-inline-block align-items-start">
+                                    <div class="d-inline-flex align-items-start">
+                                        <img class="project-icon"
+                                             src="assets/img/projects/talky.png" alt="Card image cap"
+                                             class="img-center">
+                                        <h4 style="margin-top: 10px;">Talky <br>
+                                            <small>NWHacks 2018</small>
+                                        </h4>
+                                    </div>
+                                    <p class="no-bottom"><i> A personalized public speaking coach that analyzes and
+                                        gives feedback on speeches</i></p>
+                                    <hr class="project-line">
+                                    <p class="card-text">Talky is an iOS application that records the audio of speeches
+                                        and gives feedback based on 4 key criteria. A python script hosted on a flask
+                                        server analyzes the audio for pausing, loudness, accuracy and speed and returns
+                                        the results for the user to understand and improve on. I developed a fun and
+                                        interactive chat-based UI for the user to communicate with Talky as well as a
+                                        community feature for sharing of speeches and results.</p>
+                                    <h6><span class="award">WINNER</span> Top 10 Overall</h6>
+                                    <h6><span class="award">WINNER</span> Most Popular Vote</h6>
+                                    <h6><span class="award">WINNER</span> Best Microsoft Hack</h6>
+                                    <div class="d-inline-flex align-items-start">
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Devpost</span>
+                                            <span class="btn-inner--hidden"><i class="fas fa-code"></i></span>
+                                        </button>
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Github</span>
+                                            <span class="btn-inner--hidden"><i class="fab fa-github"></i></span>
+                                        </button>
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">App Store</span>
+                                            <span class="btn-inner--hidden"><i class="fab fa-apple"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-5 mb-5">
-                    <div class="card shadow">
-                        <div class="card-body py-4">
-                            <div class="d-inline-block align-items-start">
-                                <img class="card-img-top" style="margin: 0px 0px 10px 0px; object-fit: contain;"
-                                     src="assets/img/projects/iris.jpg" alt="Card image cap" class="img-center">
-                                <h4 class="">Iris
-                                    <small>| Synopsys Science Fair 2018</small>
-                                </h4>
-                                <p style="margin-bottom: 0;"><i> An intuitive and functional Braille Learning Device for
-                                    the visually impaired</i></p>
-                                <hr style="margin: 5px 0px 10px 0px;">
-                                <p class="card-text">Iris is a device that helps the visually impaired learn Braille
-                                    effectively and efficiently. Iris is composed of a cardboard frame with 2 3D-printed
-                                    octagons that rotate to form any character in the braille language. They are
-                                    controlled by rotational motors through an Arduino board. An accompanying iOS app,
-                                    designed with a minimalistic UI serves as the controller for the device learning
-                                    numbers and letters through Speech-to-text. A flask server hosted on Heroku
-                                    communicates between the app and device to convert spoken characters to degrees of
-                                    rotation on the device.</p>
-                                <h6 style="margin: 10px 0px;"><span
-                                        style="background-color: gold; padding: 2px 5px; margin-right: 5px; border-radius: 5px;">WINNER</span>2nd
-                                    Place Overall</h6>
-                                <div class="d-inline-flex align-items-start">
-                                    <button type="button" class="btn btn-primary btn-animated btn-animated-x"
-                                            style="margin: 5px 10px 5px 0px;">
-                                        <span class="btn-inner--visible">Devpost</span>
-                                        <span class="btn-inner--hidden"><i class="fas fa-play"></i></span>
-                                    </button>
-                                    <button type="button" class="btn btn-primary btn-animated btn-animated-x"
-                                            style="margin: 5px 10px 5px 0px;">
-                                        <span class="btn-inner--visible">Github</span>
-                                        <span class="btn-inner--hidden"><i class="fas fa-play"></i></span>
-                                    </button>
+                        <div class="col-lg-6 mb-3">
+                            <div class="card-body py-4 card shadow">
+                                <div class="d-inline-block align-items-start">
+                                    <div class="d-inline-flex align-items-start">
+                                        <img class="project-icon"
+                                             src="assets/img/projects/iris.jpg" alt="Card image cap" class="img-center">
+                                        <h4 style="margin-top: 10px;">Iris <br>
+                                            <small>Synopsys Science Fair 2018</small>
+                                        </h4>
+                                    </div>
+                                    <p class="no-bottom"><i> An intuitive and functional Braille Learning Device for
+                                        the visually impaired</i></p>
+                                    <hr class="project-line">
+                                    <p class="card-text">Iris is a device that helps the visually impaired learn Braille
+                                        effectively and efficiently. Iris is composed of a cardboard frame with 2
+                                        3D-printed
+                                        octagons that rotate to form any character in the braille language. They are
+                                        controlled by rotational motors through an Arduino board. An accompanying iOS
+                                        app,
+                                        designed with a minimalistic UI serves as the controller for the device learning
+                                        numbers and letters through Speech-to-text. A flask server hosted on Heroku
+                                        communicates between the app and device to convert spoken characters to degrees
+                                        of
+                                        rotation on the device.</p>
+                                    <h6><span class="award">WINNER</span> 2nd Place Overall</h6>
+                                    <div class="d-inline-flex align-items-start">
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Devpost</span>
+                                            <span class="btn-inner--hidden"><i class="fas fa-code"></i></span>
+                                        </button>
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Github</span>
+                                            <span class="btn-inner--hidden"><i class="fab fa-github"></i></span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- End of first two projects -->
+                    <!-- Beginning of next two projects -->
+
+                    <div class="col-md-10 offset-1 d-lg-flex">
+                        <div class="col-lg-6 mb-3">
+                            <div class="card-body py-4 card shadow">
+                                <div class="d-inline-block align-items-start">
+                                    <div class="d-inline-flex align-items-start">
+                                        <img class="project-icon"
+                                             src="assets/img/projects/guru.png" alt="Card image cap" class="img-center">
+                                        <h4 style="margin-top: 10px;">Guru <br>
+                                            <small>PennApps XV</small>
+                                        </h4>
+                                    </div>
+                                    <p class="no-bottom"><i> Bringing students high-class education and help through
+                                        live-streaming technology</i></p>
+                                    <hr class="project-line">
+                                    <p class="card-text">Guru is a native iOS application that utilizes live-streaming
+                                        instructional technology to instantaneously connect students with “Gurus” in an
+                                        effective learning environment. Students and the Guru are synced and placed in a
+                                        live
+                                        video call integrated through Twilio to discuss the problem. We developed a
+                                        custom
+                                        collaborative whiteboard, allowing both the student and Guru to draw and explain
+                                        difficult concepts without having to leave the call. </p>
+                                    <h6><span class="award">WINNER</span> Top 10 Overall</h6>
+                                    <h6><span class="award">WINNER</span> $1000 Grant from 1517</h6>
+                                    <h6><span class="award">WINNER</span> Best Education Hack</h6>
+                                    <div class="d-inline-flex align-items-start">
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Devpost</span>
+                                            <span class="btn-inner--hidden"><i class="fas fa-code"></i></span>
+                                        </button>
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Github</span>
+                                            <span class="btn-inner--hidden"><i class="fab fa-github"></i></span>
+                                        </button>
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">App Store</span>
+                                            <span class="btn-inner--hidden"><i class="fab fa-apple"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <div class="card-body py-4 card shadow">
+                                <div class="d-inline-block align-items-start">
+                                    <div class="d-inline-flex align-items-start">
+                                        <img class="project-icon"
+                                             src="assets/img/projects/medicai.png" alt="Card image cap"
+                                             class="img-center">
+                                        <h4 style="margin-top: 10px;">MedicAI <br>
+                                            <small>Synopsys Science Fair 2017</small>
+                                        </h4>
+                                    </div>
+                                    <p class="no-bottom"><i> The Classification Of Medical Problems Through SMS and
+                                        Machine
+                                        Learning</i></p>
+                                    <hr class="project-line">
+                                    <p class="card-text">MedicAI is an SMS-based platform focused on bringing quick
+                                        and
+                                        accurate
+                                        medical diagnoses to 3rd world countries. A user can either send an image of
+                                        the
+                                        disease or a text of the symptoms they face. I wrote a
+                                        classification algorithm for common visible ailments and a custom NLP
+                                        algorithm
+                                        to
+                                        that
+                                        extracted symptoms based on value association and frequency. Once the
+                                        disease
+                                        had
+                                        been
+                                        classified, I utilized location analysis to build a heatmap of
+                                        location-specific
+                                        outbreaks and further improve my accuracy. After cross validation, the final
+                                        service
+                                        had
+                                        an accuracy of 90% with images and 94% with text.</p>
+                                    <h6><span class="award">WINNER</span> Grand Prize Winner - $1000</h6>
+                                    <h6><span class="award">WINNER</span> Honorable Mention</h6>
+                                    <div class="d-inline-flex align-items-start">
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Devpost</span>
+                                            <span class="btn-inner--hidden"><i class="fas fa-code"></i></span>
+                                        </button>
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Github</span>
+                                            <span class="btn-inner--hidden"><i class="fab fa-github"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- End of next two projects -->
+                    <!-- Beginning of next two projects -->
+
                 </div>
             </div>
         </div>

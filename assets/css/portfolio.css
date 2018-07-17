@@ -1,4 +1,8 @@
-.project {
+section {
+    background-color: rgba(0,0,0,0.1);
+}
+
+#projects {
     font-family: "Avenir Next";
 }
 
@@ -14,8 +18,14 @@ p .no-bottom {
     margin-bottom: 0;
 }
 
-hr {
+.project-line{
     margin: 5px 0px 10px 0px;
+}
+
+#header-line {
+    background-color: #212529;
+    height: 1px;
+    margin: 10px 0px 25px 0px;
 }
 
 .award {
@@ -23,6 +33,10 @@ hr {
     background-color: gold;
     padding: 2px 5px;
     border-radius: 5px;
+}
+
+div h1 {
+    margin-bottom: 0px;
 }
 
 div h6 {
@@ -33,5 +47,6 @@ div .btn {
     padding: 5px 10px;
     font-weight: normal;
     text-decoration: none;
+    margin: 5px 10px 5px 0px;
 }
 
