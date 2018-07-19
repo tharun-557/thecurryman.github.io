@@ -5424,7 +5424,7 @@ input[type='button'].btn-block
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link:focus
 {
-    color: #fff;
+    color: #0191fe;
 }
 .navbar-dark .navbar-nav .nav-link.disabled
 {

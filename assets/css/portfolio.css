@@ -1,5 +1,5 @@
 body{
-    background-color: rgba(1,1,1,0.1);
+    background-color: #0191FE;
 }
 
 .header-link {
@@ -37,12 +37,16 @@ p .no-bottom {
 }
 
 .header-title {
-    color: rgba(1,1,1,.8);
+    color: white;
     font-size: 50px;
 }
 
+.header-subtitle {
+    color: whitesmoke;
+}
+
 #header-line {
-    background-color: rgba(1,1,1,.9);
+    background-color: white;
     height: 1px;
     margin: 10px 0px 25px 0px;
 }
