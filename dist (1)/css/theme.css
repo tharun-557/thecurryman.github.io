@@ -16746,7 +16746,7 @@ Styled shaped wrappers for displaying code and images in a more stylish manner
 .navbar-nav .nav-link
 {
     font-family: 'Nunito', sans-serif;
-    font-size: 20px;
+    font-size: .875rem;
     font-weight: 600;
 
     transition: all .15s linear; 

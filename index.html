@@ -11,6 +11,7 @@
     <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
     <!-- Page plugins -->
     <link type="text/css" href="./assets/vendor/highlight/css/highlight.min.css" rel="stylesheet">
     <link type="text/css" href="./assets/vendor/highlight/css/styles/atom-one-dark.css" rel="stylesheet">
@@ -23,86 +24,30 @@
 
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-transparent navbar-dark bg-dark py-3" id="navbar_main">
+    <nav class="navbar navbar-expand-lg navbar-dark py-3" id="navbar_main" style="display: block">
         <div class="container">
-            <a class="navbar-brand mr-lg-5" href="./index.html"><strong>Purpose</strong> UI Kit</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_main_collapse"
-                    aria-controls="navbar_main" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" id="name" href="./index.html"><strong>Avinash Jain</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_main_collapse" aria-controls="navbar_main" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar_main_collapse">
-                <ul class="navbar-nav align-items-lg-center">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./index.html">Overview</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">Pages</a>
-                        <div class="dropdown-menu dropdown-menu-lg py-0">
-                            <div class="list-group list-group-flush">
-                                <a href="./pages/pages-landing.html" class="list-group-item list-group-item-action">
-                                    <div class="media d-flex align-items-center">
-                                        <img src="./assets/img/icons/dusk/svg/browser-window.svg" class="img-saturate"
-                                             style="width: 60px;">
-                                        <div class="media-body ml-3">
-                                            <h2 class="heading h6 mb-1">Landing Pages</h2>
-                                            <p class="mb-0">A great point to start from.</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="./pages/pages-secondary.html" class="list-group-item list-group-item-action">
-                                    <div class="media d-flex align-items-center">
-                                        <img src="./assets/img/icons/dusk/svg/details-popup.svg" class="img-saturate"
-                                             style="width: 60px;">
-                                        <div class="media-body ml-3">
-                                            <h2 class="heading h6 mb-1">Secondary Pages</h2>
-                                            <p class="mb-0">Build your website with these demos.</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="./pages/pages-account.html" class="list-group-item list-group-item-action">
-                                    <div class="media d-flex align-items-center">
-                                        <img src="./assets/img/icons/dusk/svg/form.svg" class="img-saturate"
-                                             style="width: 60px;">
-                                        <div class="media-body ml-3">
-                                            <h2 class="heading h6 mb-1">Account Pages</h2>
-                                            <p class="mb-0">User account management made easy.</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./docs/alerts.html" role="button">Components</a>
-                    </li>
-                </ul>
                 <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./docs/introduction.html" target="_blank">Docs</a>
+                        <a class="nav-link header-link" href="../docs/introduction.html" target="_blank">Docs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./docs/changelog.html" target="_blank">Changelog</a>
-                    </li>
-                    <li class="nav-item mr-0">
-                        <a href="https://themes.getbootstrap.com/product/purpose-website-ui-kit/" target="_blank"
-                           class="nav-link d-lg-none">Purchase now</a>
-                        <a href="https://themes.getbootstrap.com/product/purpose-website-ui-kit/" target="_blank"
-                           class="btn btn-sm btn-white btn-circle btn-icon d-none d-lg-inline-flex">
-                            <span class="btn-inner--icon"><i class="fas fa-shopping-cart"></i></span>
-                            <span class="btn-inner--text">Purchase now</span>
-                        </a>
+                        <a class="nav-link header-link" href="../docs/changelog.html" target="_blank">Changelog</a>
                     </li>
                 </ul>
             </div>
-        </div>
+            </div>
     </nav>
 </header>
 <main>
     <section class="slice" id="projects">
         <div class="container">
-            <div class="col-sm-10 offset-1">
-                <h1> Portfolio </h1>
+            <div class="col-md-10 offset-md-1">
+                <h1 class="header-title"> Portfolio </h1>
                 <h3>
                     <small> A collection of my latest projects and apps</small>
                 </h3>
@@ -113,7 +58,7 @@
             <div class="row project">
                 <div class="d-lg-inline-block">
                     <!-- First two projects -->
-                    <div class="col-sm-10 offset-1 d-lg-flex">
+                    <div class="col-md-10 offset-md-1 d-lg-flex">
                         <div class="col-lg-6 mb-3">
                             <div class="card-body py-4 card shadow">
                                 <div class="d-inline-block align-items-start">
@@ -197,7 +142,7 @@
                     <!-- End of first two projects -->
                     <!-- Beginning of next two projects -->
 
-                    <div class="col-md-10 offset-1 d-lg-flex">
+                    <div class="col-md-10 offset-md-1 d-lg-flex">
                         <div class="col-lg-6 mb-3">
                             <div class="card-body py-4 card shadow">
                                 <div class="d-inline-block align-items-start">
@@ -275,7 +220,6 @@
                                         had
                                         an accuracy of 90% with images and 94% with text.</p>
                                     <h6><span class="award">WINNER</span> Grand Prize Winner - $1000</h6>
-                                    <h6><span class="award">WINNER</span> Honorable Mention</h6>
                                     <div class="d-inline-flex align-items-start">
                                         <button type="button" class="btn btn-primary btn-animated btn-animated-x">
                                             <span class="btn-inner--visible">Devpost</span>
@@ -293,6 +237,159 @@
 
                     <!-- End of next two projects -->
                     <!-- Beginning of next two projects -->
+
+                    <div class="col-md-10 offset-md-1 d-lg-flex">
+                        <div class="col-lg-6 mb-3">
+                            <div class="card-body py-4 card shadow">
+                                <div class="d-inline-block align-items-start">
+                                    <div class="d-inline-flex align-items-start">
+                                        <img class="project-icon"
+                                             src="assets/img/projects/pinpoint.png" alt="Card image cap"
+                                             class="img-center">
+                                        <h4 style="margin-top: 10px;">PinPoint <br>
+                                            <small>SM Hacks</small>
+                                        </h4>
+                                    </div>
+                                    <p class="no-bottom"><i> Generating the fastest path in a grocery store to grab your
+                                        items and get out</i></p>
+                                    <hr class="project-line">
+                                    <p class="card-text">PinPoint is an android application that generates the fastest
+                                        path to grab all your items in a grocery store. My team and I created a mock
+                                        bitmap of an actual store with 0’s representing free space and 1’s representing
+                                        obstacles. Importing the user’s shopping list we figured out the items locations
+                                        on the bitmap/2D array. We then utilized the A* algorithm on the bitmap matrix
+                                        to find the best path between the individual points. The android application has
+                                        an 8-Bit UI with animating lines, pulsating items and disappearing pathways as
+                                        the user travels from item to item.</p>
+                                    <h6><span class="award">WINNER</span> Best Android App</h6>
+                                    <div class="d-inline-flex align-items-start">
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Devpost</span>
+                                            <span class="btn-inner--hidden"><i class="fas fa-code"></i></span>
+                                        </button>
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Github</span>
+                                            <span class="btn-inner--hidden"><i class="fab fa-github"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <div class="card-body py-4 card shadow">
+                                <div class="d-inline-block align-items-start">
+                                    <div class="d-inline-flex align-items-start">
+                                        <img class="project-icon"
+                                             src="assets/img/projects/icon.png" alt="Card image cap"
+                                             class="img-center">
+                                        <h4 style="margin-top: 10px;">ICON <br>
+                                            <small>CruzHacks</small>
+                                        </h4>
+                                    </div>
+                                    <p class="no-bottom"><i> A clothing classifier that helps identify other outfits and
+                                        discover the latest fashion trends</i></p>
+                                    <hr class="project-line">
+                                    <p class="card-text">ICON is an iOS application focused on making fashion accessible
+                                        to everyone. Using a convolutional neural network, we wrote an image classifier
+                                        with 10 different categories to document and record the user’s closet. The user
+                                        selects and stores their outfit everyday; If someone sees their outfit and likes
+                                        it, they can save that outfit and all nearby outfits with a tap of a button. The
+                                        outfit discovery feature is based on a location proximity of 10 meters. We also
+                                        utilized frequency analysis on user outfits in an area to predict current and
+                                        future fashion trends.</p>
+                                    <h6><span class="award">WINNER</span> Project YX Fashion Prize</h6>
+                                    <div class="d-inline-flex align-items-start">
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Devpost</span>
+                                            <span class="btn-inner--hidden"><i class="fas fa-code"></i></span>
+                                        </button>
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Github</span>
+                                            <span class="btn-inner--hidden"><i class="fab fa-github"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- End of next two projects -->
+                    <!-- Beginning of next two projects -->
+
+                    <div class="col-md-10 offset-md-1 d-lg-flex">
+                        <div class="col-lg-6 mb-3">
+                            <div class="card-body py-4 card shadow">
+                                <div class="d-inline-block align-items-start">
+                                    <div class="d-inline-flex align-items-start">
+                                        <img class="project-icon"
+                                             src="assets/img/projects/60seconds.png" alt="Card image cap"
+                                             class="img-center">
+                                        <h4 style="margin-top: 10px;">60Seconds <br>
+                                            <small>BASE Hacks</small>
+                                        </h4>
+                                    </div>
+                                    <p class="no-bottom"><i> Storing daily memories through a simple phone call</i></p>
+                                    <hr class="project-line">
+                                    <p class="card-text">60Seconds is an iOS Application that calls the user every day
+                                        at 9 PM to record a 60-second description of what happened throughout the day.
+                                        The application acts as an online journal for the user; We utilized Twilio to
+                                        make the recurring call and stored the audio in Firebase. We designed a custom
+                                        calendar for the iOS Application that stored both the audio of the recording and
+                                        the transcribed version. By running sentiment analysis, we determined if the
+                                        user was happy or not on that day and classified it accordingly. A Flask server
+                                        hosted on Heroku was used to call the user and analyze the recording.</p>
+                                    <h6><span class="award">WINNER</span> First Place Overall</h6>
+                                    <div class="d-inline-flex align-items-start">
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Devpost</span>
+                                            <span class="btn-inner--hidden"><i class="fas fa-code"></i></span>
+                                        </button>
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Github</span>
+                                            <span class="btn-inner--hidden"><i class="fab fa-github"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <div class="card-body py-4 card shadow">
+                                <div class="d-inline-block align-items-start">
+                                    <div class="d-inline-flex align-items-start">
+                                        <img class="project-icon"
+                                             src="assets/img/projects/rhythm.png" alt="Card image cap"
+                                             class="img-center">
+                                        <h4 style="margin-top: 10px;">Rhythm <br>
+                                            <small>PennApps XVI</small>
+                                        </h4>
+                                    </div>
+                                    <p class="no-bottom"><i> Bringing algorithmic stock trading to the masses</i></p>
+                                    <hr class="project-line">
+                                    <p class="card-text">Rhythm is a web application that converts direct english
+                                        sentences and commands into algorithms executable for the stock market. I
+                                        utilized Natural Language Processing to analyze the command, remove stopwords
+                                        and comprehend technical terms to generate the investment command. I then
+                                        leveraged Quantopian and Zipline to fetch historical stock data and run the
+                                        generated stock algorithm against it. Once the results came in, I build a data
+                                        visualization dashboard with MatPlotLib to view and predict how their algorithm
+                                        did in the past and learn how it would perform in the present. The entire
+                                        website was built using React and Node.JS.</p>
+                                    <div class="d-inline-flex align-items-start">
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Devpost</span>
+                                            <span class="btn-inner--hidden"><i class="fas fa-code"></i></span>
+                                        </button>
+                                        <button type="button" class="btn btn-primary btn-animated btn-animated-x">
+                                            <span class="btn-inner--visible">Github</span>
+                                            <span class="btn-inner--hidden"><i class="fab fa-github"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- End of next two projects -->
 
                 </div>
             </div>
