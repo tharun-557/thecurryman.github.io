@@ -1,10 +1,12 @@
 
 body, section {
     height: 100%;
+    background-color: #0191FE;
 }
 
 #bg {
     position: absolute;
+    overflow: hidden;
 }
 
 #c {

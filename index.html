@@ -1,326 +1,1 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Webpixels">
-    <title>Avinash Jain - Portfolio</title>
-    <!-- Favicon -->
-    <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
-    <!-- Page plugins -->
-    <link type="text/css" href="./assets/vendor/highlight/css/highlight.min.css" rel="stylesheet">
-    <link type="text/css" href="./assets/vendor/highlight/css/styles/atom-one-dark.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
-          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <!-- Theme CSS -->
-    <link type="text/css" href="./assets/css/theme.css" rel="stylesheet">
-    <link type="text/css" href="./assets/css/home.css" rel="stylesheet">
-</head>
-
-<header>
-    <div class="bg-white">
-        <div class="container">
-            <nav class="navbar navbar-expand-md navbar-transparent navbar-light py-3" id="navbar_main"
-                 style="padding: 0px;">
-                <div class="container">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbar_main_collapse"
-                            aria-controls="navbar_main" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbar_main_collapse">
-                        <ul class="navbar-nav align-items-lg-center ml-sm-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="../docs/introduction.html"
-                                   target="_blank">Experience</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./portfolio.html"
-                                   target="_blank">Portfolio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../docs/changelog.html"
-                                   target="_blank">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-</header>
-<body>
-<main>
-    <div id="bg">
-        <canvas id="c"></canvas>
-    </div>
-    <section class="slice slice-xl bg-transparent">
-        <div class="container">
-            <div class="col-md-10 offset-md-1 text-center">
-                <h3 class="header-subtitle">
-                    <a id="name" href="./index.html"><strong>Avinash Jain</strong></a>
-                </h3>
-                <hr id="header-line">
-                <p> Hi there! I'm Avi, a freshman at UC Berkeley studying EECS who loves to innovate and build </p>
-            </div>
-        </div>
-    </section>
-</main>
-
-
-<script src="./assets/js/anime.min.js"></script>
-<script>
-    var c = document.getElementById("c");
-    var ctx = c.getContext("2d");
-    var cH;
-    var cW;
-    var bgColor = "#0191FE";
-    var animations = [];
-    var circles = [];
-
-    function removeAnimation(animation) {
-        var index = animations.indexOf(animation);
-        if (index > -1) animations.splice(index, 1);
-    }
-
-    function calcPageFillRadius(x, y) {
-        var l = Math.max(x - 0, cW - x);
-        var h = Math.max(y - 0, cH - y);
-        return Math.sqrt(Math.pow(l, 2) + Math.pow(h, 2));
-    }
-
-    function getRandomPosition() {
-        var x = window.innerWidth;
-        var y = window.innerHeight;
-        var randomX = Math.floor(Math.random() * x);
-        var randomY = Math.floor(Math.random() * y);
-        console.log(randomX);
-        return [randomX, randomY];
-    }
-
-    function handleEvent(){
-        var points = getRandomPosition();
-        var currentColor = "rgba(255,255,255, .5)";
-        var nextColor = "#0191FE";
-        var targetR = calcPageFillRadius(points[0], points[1]);
-        var rippleSize = Math.min(100, (cW * .4));
-        var minCoverDuration = 750;
-
-        var pageFill = new Circle({
-            x: points[0],
-            y: points[1],
-            r: 0,
-            fill: nextColor
-        });
-        var fillAnimation = anime({
-            targets: pageFill,
-            r: targetR,
-            duration: Math.max(targetR / 2, minCoverDuration),
-            easing: "easeOutQuart",
-            complete: function () {
-                bgColor = pageFill.fill;
-                removeAnimation(fillAnimation);
-            }
-        });
-
-        var ripple = new Circle({
-            x: points[0],
-            y: points[1],
-            r: 0,
-            fill: currentColor,
-            stroke: {
-                width: 3,
-                color: currentColor
-            },
-            opacity: 1
-        });
-        var rippleAnimation = anime({
-            targets: ripple,
-            r: rippleSize,
-            opacity: 0,
-            easing: "easeOutExpo",
-            duration: 1200,
-            complete: removeAnimation
-        });
-
-        var particles = [];
-        for (var i = 0; i < 32; i++) {
-            var particle = new Circle({
-                x: points[0],
-                y: points[1],
-                fill: currentColor,
-                r: anime.random(10, 30)
-            });
-            particles.push(particle);
-        }
-        var particlesAnimation = anime({
-            targets: particles,
-            x: function (particle) {
-                return particle.x + anime.random(rippleSize * 3, -rippleSize * 3);
-            },
-            y: function (particle) {
-                return particle.y + anime.random(rippleSize * 3, -rippleSize * 3);
-            },
-            r: 0,
-            easing: "easeOutExpo",
-            duration: anime.random(3000, 4000),
-            complete: removeAnimation
-        });
-        animations.push(fillAnimation, rippleAnimation, particlesAnimation);
-    }
-    function handleEvent2(){
-        var points = getRandomPosition();
-        var currentColor = "rgba(255,255,255, .5)";
-        var nextColor = "#0191FE";
-        var targetR = calcPageFillRadius(points[0], points[1]);
-        var rippleSize = Math.min(100, (cW * .4));
-        var minCoverDuration = 750;
-
-        var pageFill = new Circle({
-            x: points[0],
-            y: points[1],
-            r: 0,
-            fill: nextColor
-        });
-        var fillAnimation = anime({
-            targets: pageFill,
-            r: targetR,
-            duration: Math.max(targetR / 2, minCoverDuration),
-            easing: "easeOutQuart",
-            complete: function () {
-                bgColor = pageFill.fill;
-                removeAnimation(fillAnimation);
-            }
-        });
-
-        var ripple = new Circle({
-            x: points[0],
-            y: points[1],
-            r: 0,
-            fill: currentColor,
-            stroke: {
-                width: 3,
-                color: currentColor
-            },
-            opacity: 1
-        });
-        var rippleAnimation = anime({
-            targets: ripple,
-            r: rippleSize,
-            opacity: 0,
-            easing: "easeOutExpo",
-            duration: 1200,
-            complete: removeAnimation
-        });
-
-        var particles = [];
-        for (var i = 0; i < 32; i++) {
-            var particle = new Circle({
-                x: points[0],
-                y: points[1],
-                fill: currentColor,
-                r: anime.random(10, 30)
-            });
-            particles.push(particle);
-        }
-        var particlesAnimation = anime({
-            targets: particles,
-            x: function (particle) {
-                return particle.x + anime.random(rippleSize * 2, -rippleSize * 2);
-            },
-            y: function (particle) {
-                return particle.y + anime.random(rippleSize * 2, -rippleSize * 2);
-            },
-            r: 0,
-            easing: "easeOutExpo",
-            duration: anime.random(2000, 3000),
-            complete: removeAnimation
-        });
-        animations.push(fillAnimation, rippleAnimation, particlesAnimation);
-    }
-
-    function extend(a, b) {
-        for (var key in b) {
-            if (b.hasOwnProperty(key)) {
-                a[key] = b[key];
-            }
-        }
-        return a;
-    }
-
-    var Circle = function (opts) {
-        extend(this, opts);
-    }
-
-    Circle.prototype.draw = function () {
-        ctx.globalAlpha = this.opacity || 1;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
-        if (this.stroke) {
-            ctx.strokeStyle = this.stroke.color;
-            ctx.lineWidth = this.stroke.width;
-            ctx.stroke();
-        }
-        if (this.fill) {
-            ctx.fillStyle = this.fill;
-            ctx.fill();
-        }
-        ctx.closePath();
-        ctx.globalAlpha = 1;
-    }
-
-    var animate = anime({
-        duration: Infinity,
-        update: function () {
-            ctx.fillStyle = bgColor;
-            ctx.fillRect(0, 0, cW, cH);
-            animations.forEach(function (anim) {
-                anim.animatables.forEach(function (animatable) {
-                    animatable.target.draw();
-                });
-            });
-        }
-    });
-
-    var resizeCanvas = function () {
-        cW = window.innerWidth;
-        cH = window.innerHeight;
-        c.width = cW * devicePixelRatio;
-        c.height = cH * devicePixelRatio;
-        ctx.scale(devicePixelRatio, devicePixelRatio);
-    };
-
-    (function init() {
-        resizeCanvas();
-        window.addEventListener("resize", resizeCanvas);
-        setInterval(function(){
-            handleEvent();
-        }, 2000);
-
-        timeout(1000)
-        setInterval(function(){
-            handleEvent2();
-        }, 2000);
-
-    })();
-
-</script>
-<!-- Core -->
-<script src="./assets/vendor/jquery/jquery.min.js"></script>
-<script src="./assets/vendor/popper/popper.min.js"></script>
-<script src="./assets/js/bootstrap/bootstrap.min.js"></script>
-
-<!-- FontAwesome 5 -->
-<script src="./assets/vendor/fontawesome/js/fontawesome-all.min.js" defer></script>
-<!-- Page plugins -->
-<script src="./assets/vendor/highlight/js/highlight.min.js"></script>
-<!-- Theme JS -->
-<script src="./assets/js/theme.min.js"></script>
-</body>
-
-</html>
+<!DOCTYPE html><html><head>    <meta charset="utf-8">    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    <meta name="description" content="">    <meta name="author" content="Webpixels">    <title>Avinash Jain - Portfolio</title>    <!-- Favicon -->    <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">    <!-- Fonts -->    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" rel="stylesheet">    <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">    <!-- Page plugins -->    <link type="text/css" href="./assets/vendor/highlight/css/highlight.min.css" rel="stylesheet">    <link type="text/css" href="./assets/vendor/highlight/css/styles/atom-one-dark.css" rel="stylesheet">    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">    <!-- Theme CSS -->    <link type="text/css" href="./assets/css/theme.css" rel="stylesheet">    <link type="text/css" href="./assets/css/home.css" rel="stylesheet"></head><header>    <div class="bg-white">        <div class="container">            <nav class="navbar navbar-expand-md navbar-transparent navbar-light py-3" id="navbar_main"                 style="padding: 0px;">                <div class="container">                    <button class="navbar-toggler" type="button" data-toggle="collapse"                            data-target="#navbar_main_collapse"                            aria-controls="navbar_main" aria-expanded="false" aria-label="Toggle navigation">                        <span class="navbar-toggler-icon"></span>                    </button>                    <div class="collapse navbar-collapse" id="navbar_main_collapse">                        <ul class="navbar-nav align-items-lg-center ml-sm-auto">                            <li class="nav-item">                                <a class="nav-link" href="../docs/introduction.html"                                   target="_blank">Experience</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="./portfolio.html"                                   target="_blank">Portfolio</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="../docs/changelog.html"                                   target="_blank">Contact</a>                            </li>                        </ul>                    </div>                </div>            </nav>        </div>    </div></header><body><main>    <div id="bg">        <div id="c"> </div>    </div>    <section class="slice slice-xl bg-transparent">        <div class="container">            <div class="col-md-10 offset-md-1 text-center">                <h3 class="header-subtitle">                    <a id="name" href="./index.html"><strong>Avinash Jain</strong></a>                </h3>                <hr id="header-line">                <p> Hi there! I'm Avi, a freshman at UC Berkeley studying EECS who loves to innovate and build </p>            </div>        </div>    </section></main><script src="./assets/js/anime.min.js"></script><!--<script>    var c = document.getElementById("c");    var ctx = c.getContext("2d");    var cH;    var cW;    var bgColor = "#0191FE";    var animations = [];    var circles = [];    function removeAnimation(animation) {        var index = animations.indexOf(animation);        if (index > -1) animations.splice(index, 1);    }    function calcPageFillRadius(x, y) {        var l = Math.max(x - 0, cW - x);        var h = Math.max(y - 0, cH - y);        return Math.sqrt(Math.pow(l, 2) + Math.pow(h, 2));    }    function getRandomPosition() {        var x = window.innerWidth;        var y = window.innerHeight;        var randomX = Math.floor(Math.random() * x);        var randomY = Math.floor(Math.random() * y);        console.log(randomX);        return [randomX, randomY];    }    function handleEvent(){        var points = getRandomPosition();        var currentColor = "rgba(255,255,255, .5)";        var nextColor = "#0191FE";        var targetR = calcPageFillRadius(points[0], points[1]);        var rippleSize = Math.min(100, (cW * .4));        var minCoverDuration = 750;        var pageFill = new Circle({            x: points[0],            y: points[1],            r: 0,            fill: nextColor        });        var fillAnimation = anime({            targets: pageFill,            r: targetR,            duration: Math.max(targetR / 2, minCoverDuration),            easing: "easeOutQuart",            complete: function () {                bgColor = pageFill.fill;                removeAnimation(fillAnimation);            }        });        var ripple = new Circle({            x: points[0],            y: points[1],            r: 0,            fill: currentColor,            stroke: {                width: 3,                color: currentColor            },            opacity: 1        });        var rippleAnimation = anime({            targets: ripple,            r: rippleSize,            opacity: 0,            easing: "easeOutExpo",            duration: 1200,            complete: removeAnimation        });        var particles = [];        for (var i = 0; i < 32; i++) {            var particle = new Circle({                x: points[0],                y: points[1],                fill: currentColor,                r: anime.random(10, 30)            });            particles.push(particle);        }        var particlesAnimation = anime({            targets: particles,            x: function (particle) {                return particle.x + anime.random(rippleSize * 3, -rippleSize * 3);            },            y: function (particle) {                return particle.y + anime.random(rippleSize * 3, -rippleSize * 3);            },            r: 0,            easing: "easeOutExpo",            duration: anime.random(3000, 4000),            complete: removeAnimation        });        animations.push(fillAnimation, rippleAnimation, particlesAnimation);    }    function handleEvent2(){        var points = getRandomPosition();        var currentColor = "rgba(255,255,255, .5)";        var nextColor = "#0191FE";        var targetR = calcPageFillRadius(points[0], points[1]);        var rippleSize = Math.min(100, (cW * .4));        var minCoverDuration = 750;        var pageFill = new Circle({            x: points[0],            y: points[1],            r: 0,            fill: nextColor        });        var fillAnimation = anime({            targets: pageFill,            r: targetR,            duration: Math.max(targetR / 2, minCoverDuration),            easing: "easeOutQuart",            complete: function () {                bgColor = pageFill.fill;                removeAnimation(fillAnimation);            }        });        var ripple = new Circle({            x: points[0],            y: points[1],            r: 0,            fill: currentColor,            stroke: {                width: 3,                color: currentColor            },            opacity: 1        });        var rippleAnimation = anime({            targets: ripple,            r: rippleSize,            opacity: 0,            easing: "easeOutExpo",            duration: 1200,            complete: removeAnimation        });        var particles = [];        for (var i = 0; i < 32; i++) {            var particle = new Circle({                x: points[0],                y: points[1],                fill: currentColor,                r: anime.random(10, 30)            });            particles.push(particle);        }        var particlesAnimation = anime({            targets: particles,            x: function (particle) {                return particle.x + anime.random(rippleSize * 2, -rippleSize * 2);            },            y: function (particle) {                return particle.y + anime.random(rippleSize * 2, -rippleSize * 2);            },            r: 0,            easing: "easeOutExpo",            duration: anime.random(2000, 3000),            complete: removeAnimation        });        animations.push(fillAnimation, rippleAnimation, particlesAnimation);    }    function extend(a, b) {        for (var key in b) {            if (b.hasOwnProperty(key)) {                a[key] = b[key];            }        }        return a;    }    var Circle = function (opts) {        extend(this, opts);    }    Circle.prototype.draw = function () {        ctx.globalAlpha = this.opacity || 1;        ctx.beginPath();        ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);        if (this.stroke) {            ctx.strokeStyle = this.stroke.color;            ctx.lineWidth = this.stroke.width;            ctx.stroke();        }        if (this.fill) {            ctx.fillStyle = this.fill;            ctx.fill();        }        ctx.closePath();        ctx.globalAlpha = 1;    }    var animate = anime({        duration: Infinity,        update: function () {            ctx.fillStyle = bgColor;            ctx.fillRect(0, 0, cW, cH);            animations.forEach(function (anim) {                anim.animatables.forEach(function (animatable) {                    animatable.target.draw();                });            });        }    });    var resizeCanvas = function () {        cW = window.innerWidth;        cH = window.innerHeight;        c.width = cW * devicePixelRatio;        c.height = cH * devicePixelRatio;        ctx.scale(devicePixelRatio, devicePixelRatio);    };    (function init() {        resizeCanvas();        window.addEventListener("resize", resizeCanvas);        setInterval(function(){            handleEvent();        }, 2000);        timeout(1000)        setInterval(function(){            handleEvent2();        }, 2000);    })();</script>--><script src="./assets/js/particles.js"></script><script>    particlesJS("c", {        "particles": {            "number": {                "value": 100,                "density": {                    "enable": true,                    "value_area": 1500                }            },            "color": {                "value": "#FFF"            },            "shape": {                "type": "circle",                "stroke": {                    "width": 0,                    "color": "white"                },            },            "opacity": {                "value": 0.5,                "random": false,                "anim": {                    "enable": false,                    "speed": 100,                    "opacity_min": 0.5,                    "sync": false                }            },            "size": {                "value": 10,                "random": true,                "anim": {                    "enable": false,                    "speed": 100,                    "size_min": 0.1,                    "sync": false                }            },            "line_linked": {                "enable": false,                "distance": 150,                "color": "#ffffff",                "opacity": 0.4,                "width": 1            },            "move": {                "enable": true,                "speed": 20,                "direction": "none",                "random": true,                "straight": false,                "out_mode": "out",                "bounce": true,                "attract": {                    "enable": false,                    "rotateX": 600,                    "rotateY": 1200                }            }        },        "interactivity": {            "detect_on": "canvas",            "events": {                "onhover": {                    "enable": false,                    "mode": "repulse"                },                "onclick": {                    "enable": false,                    "mode": "push"                },                "resize": true            },            "modes": {                "grab": {                    "distance": 400,                    "line_linked": {                        "opacity": 1                    }                },                "bubble": {                    "distance": 400,                    "size": 40,                    "duration": 2,                    "opacity": 8,                    "speed": 3                },                "repulse": {                    "distance": 200,                    "duration": 0.4                },                "push": {                    "particles_nb": 4                },                "remove": {                    "particles_nb": 2                }            }        },        "retina_detect": true    });</script><!-- Core --><script src="./assets/vendor/jquery/jquery.min.js"></script><script src="./assets/vendor/popper/popper.min.js"></script><script src="./assets/js/bootstrap/bootstrap.min.js"></script><!-- FontAwesome 5 --><script src="./assets/vendor/fontawesome/js/fontawesome-all.min.js" defer></script><!-- Page plugins --><script src="./assets/vendor/highlight/js/highlight.min.js"></script><!-- Theme JS --><script src="./assets/js/theme.min.js"></script></body></html>
