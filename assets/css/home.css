@@ -32,7 +32,7 @@ body, section {
     background-color: white;
 }
 
-h3, hr, p {
+h3, hr, p, ul {
     background-color: rgba(255,255,255,.8);
 }
 
@@ -47,6 +47,9 @@ h3{
     color: black;
 }
 
+a {
+    color: black !important;
+}
 
 
 hr {
@@ -58,4 +61,16 @@ p {
     font-size: 20px;
     font-family: Avenir Next;
     color: black;
+    margin:0px;
+}
+
+ul {
+    padding-top: 20px;
+}
+
+.actions li {
+    display: inline;
+    list-style-type: none;
+    padding: 0px 15px;
+    font-size: 1.2em;
 }
