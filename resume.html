@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Webpixels">
+    <title>Avinash Jain - Resume</title>
+    <!-- Favicon -->
+    <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
+    <!-- Page plugins -->
+    <link type="text/css" href="./assets/vendor/highlight/css/highlight.min.css" rel="stylesheet">
+    <link type="text/css" href="./assets/vendor/highlight/css/styles/atom-one-dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Theme CSS -->
+    <link type="text/css" href="./assets/css/theme.css" rel="stylesheet">
+    <link type="text/css" href="./assets/css/portfolio.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <div class="bg-white">
+        <div class="container">
+            <div class="col-md-10 offset-md-1" style="padding: 0px;">
+                <nav class="navbar navbar-expand-sm navbar-dark py-3" id="navbar_main" style="padding: 0px;">
+                    <div class="container">
+                        <a class="navbar-brand" id="name" href="./index.html"><strong>Avinash Jain</strong></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbar_main_collapse"
+                                aria-controls="navbar_main" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbar_main_collapse">
+                            <ul class="navbar-nav align-items-lg-center ml-sm-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link header-link" href="../docs/introduction.html"
+                                       target="_blank">Experience</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link header-link" href="./portfolio.html"
+                                       target="_blank">Portfolio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link header-link" href="../docs/changelog.html"
+                                       target="_blank">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="slice" id="projects">
+        <div class="container">
+            <div class="col-md-10 offset-md-1 align-items-center">
+                <h1 class="header-title"> Resume </h1>
+                <h3 class="header-subtitle">
+                    <small> My experience and skills condensed to one page</small>
+                </h3>
+                <hr id="header-line">
+                <div>
+                    <iframe style="border: 5px white solid; display: block;" id="resume"
+                            src="https://resume.creddle.io/embed/e5pmszgge2t"
+                            width="850" height="1100" scrolling="no" seamless></iframe>
+                    <a id="resumeButton" class="btn btn-dark" href="https://resume.creddle.io/resume/e5pmszgge2t">View Resume</a>
+                </div>
+            </div>
+        </div>
+</main>
+<!-- Core -->
+<script src="./assets/vendor/jquery/jquery.min.js"></script>
+<script src="./assets/vendor/popper/popper.min.js"></script>
+<script src="./assets/js/bootstrap/bootstrap.min.js"></script>
+<!-- FontAwesome 5 -->
+<script src="./assets/vendor/fontawesome/js/fontawesome-all.min.js" defer></script>
+<!-- Page plugins -->
+<script src="./assets/vendor/highlight/js/highlight.min.js"></script>
+<!-- Theme JS -->
+<script src="./assets/js/theme.min.js"></script>
+
+<script>
+    var resume = document.getElementById("resume");
+    var resumeButton = document.getElementById("resumeButton");
+    displayResume();
+    window.addEventListener("resize", function () {
+        displayResume();
+    });
+    function displayResume() {
+        if (window.matchMedia("(min-width: 1000px)").matches) {
+            resume.style.display = "block";
+            resumeButton.style.display = "none";
+        } else {
+            resume.style.display = "none";
+            resumeButton.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+
+</html>
